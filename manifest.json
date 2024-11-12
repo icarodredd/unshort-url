@@ -1,0 +1,10 @@
+{
+  "manifest_version": 3,
+  "name": "URL Unshort",
+  "description": "An extension to save your time by avoiding shortened links, redirecting you directly to the destination.",
+  "version": "1.0",
+  "action": {
+    "default_popup": "unshort.html",
+    "default_icon": "unshort-logo.jpeg"
+  }
+}
