@@ -10,7 +10,7 @@ html {
 
 main {
   width: 400px;
-  height: 150px;
+  height: max-content;
 }
 
 header {
@@ -49,4 +49,17 @@ button {
 
 button:hover {
   filter: brightness(80%);
+}
+
+section {
+  padding: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+a {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
