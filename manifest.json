@@ -3,8 +3,16 @@
   "name": "URL Unshort",
   "description": "An extension to save your time by avoiding shortened links, redirecting you directly to the destination.",
   "version": "1.0",
+  "icons": {
+    "16": "images/unshort-logo-16.png",
+    "32": "images/unshort-logo-32.png",
+    "48": "images/unshort-logo-48.png",
+    "128": "images/unshort-logo-128.png"
+  },
   "action": {
-    "default_popup": "unshort.html",
-    "default_icon": "unshort-logo.jpeg"
-  }
+    "default_popup": "index.html",
+    "default_icon": "images/broked-chain.png"
+  },
+  "host_permissions": ["<all_urls>"],
+  "permissions": ["activeTab"]
 }
