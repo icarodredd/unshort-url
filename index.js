@@ -8,15 +8,25 @@ button.addEventListener("click", async (e) => {
   const originUrl = await fetch(
     `https://unshorten.but.rest/${inputUrl.value}`
   ).then(async (res) => await res.json());
-  /*     .then((json) => json.resolved_url); */
-  const resultText = document.createElement("p");
-  const resultUrl = document.createElement("a");
 
-  resultUrl.setAttribute("href", originUrl);
-  resultUrl.setAttribute("target", "_blank");
-  resultUrl.textContent += `${originUrl.resolved_url}`;
+  if (originUrl.success === false) {
+    section.replaceChildren();
+    const errorMessage = document.createElement("p");
+    errorMessage.textContent += "Unable to unshorten the link.";
+    section.appendChild(errorMessage);
+  } else {
+    section.replaceChildren();
+    const resultText = document.createElement("p");
+    resultText.textContent += "Original link:";
 
-  resultText.textContent += "Original link:";
-  section.appendChild(resultText);
-  section.appendChild(resultUrl);
+    const buttonUrl = document.createElement("button");
+    buttonUrl.textContent += "Copy";
+
+    buttonUrl.addEventListener("click", async () => {
+      await navigator.clipboard.writeText(originUrl.resolved_url);
+    });
+
+    section.appendChild(resultText);
+    section.appendChild(buttonUrl);
+  }
 });

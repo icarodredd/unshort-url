@@ -52,6 +52,7 @@ button:hover {
 }
 
 section {
+  gap: 4px;
   padding: 4px;
   display: flex;
   justify-content: center;
